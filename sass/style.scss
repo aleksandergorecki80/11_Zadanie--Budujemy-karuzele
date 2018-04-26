@@ -2,3 +2,36 @@
 	box-sizing: border-box;
 //    border: 1px solid red;
 }
+
+body {
+    margin: 0;
+}
+
+#carousel {
+    width: 5500px;
+    height: 300px;
+    margin: 0 auto;
+    //border: 5px solid green;
+    overflow: hidden;
+    padding: 0;
+    ul {
+        margin: 0;
+        padding: 0;
+        width: 2500px;
+
+       li {
+            width: 500px;
+            height: 300px;
+            list-style-type: none;
+            float: left;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            img {
+                width: 500px;
+                height: 300px;
+                
+            }
+        }
+    }
+}
