@@ -6,7 +6,7 @@ $(function(){
 	var licznik = 0;
 	fillDots (licznik);
 
-	setInterval(changeSlide, 3000);
+	setInterval(moveSlidesBack, 3000);
 
 
 	function changeSlide(speed){	
@@ -20,6 +20,9 @@ $(function(){
 		console.log(licznik + 'licz');
 	}
 
+	function moveSlidesBack(speed){
+		carouselList.animate({'marginLeft': 500}, speed, moveLastSlide);
+	}
 
 
 function fillDots (nrSlajd){
@@ -35,6 +38,13 @@ console.log(licznik + 'poza funkcją');
 		carouselList.css({'margin-left': 0})
 	};
 
+
+	function moveLastSlide(){
+		var firstItem = carouselList.find('li:first');
+		var lastItem = carouselList.find('li:last');
+		firstItem.before(lastItem);
+		carouselList.css({'margin-left': 0})
+	};
 
 
 
@@ -64,13 +74,13 @@ fillDots(index);
 if (index>licznik){
 	
 	for (i=licznik; i<index; i++){
-	changeSlide(50);
+	changeSlide(300);
 	}
 
 }else {
 		
 		for (i=licznik; i>index; i--){
-		changeSlide(50);
+		changeSlide(300);
 		}
 
 	}
