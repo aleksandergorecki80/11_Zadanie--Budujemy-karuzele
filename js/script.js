@@ -6,8 +6,9 @@ $(function(){
 	var licznik = 0;
 	fillDots (licznik);
 
-	setInterval(moveSlidesBack, 3000);
+	var myTimer = setInterval(changeSlide, 3000);
 
+	console.log(carouselList + 'carouselList');
 
 	function changeSlide(speed){	
 		licznik ++;
@@ -16,18 +17,17 @@ $(function(){
 			licznik=0;
 		}
 		fillDots(licznik);
-
-		console.log(licznik + 'licz');
 	}
 
-	function moveSlidesBack(speed){
-		carouselList.animate({'marginLeft': 500}, speed, moveLastSlide);
-	}
-
+function moveSlidesBack (speed){
+	carouselList.animate({'marginLeft': 500}, speed, moveLastSlide);
+	licznik--;	
+}
 
 function fillDots (nrSlajd){
-	$('#menu li').css('background-color', 'white');
-	$('#menu').find("li").eq(nrSlajd).css('background-color', 'red');
+	$('#menu li').css('border', '1px solid white').css('background-color', 'none');
+	$('#menu').find("li").eq(nrSlajd).css('background-color', 'white');
+	var puste = $('#menu li').not(nrSlajd).css('border', '1px solid white').css('background-color', 'none');
 console.log(licznik + 'poza funkcją');
 }
 
@@ -38,7 +38,6 @@ console.log(licznik + 'poza funkcją');
 		carouselList.css({'margin-left': 0})
 	};
 
-
 	function moveLastSlide(){
 		var firstItem = carouselList.find('li:first');
 		var lastItem = carouselList.find('li:last');
@@ -46,6 +45,19 @@ console.log(licznik + 'poza funkcją');
 		carouselList.css({'margin-left': 0})
 	};
 
+
+/*
+function getIndexOfLi (dotIndex) {
+
+	var firstItem = carouselList.find('li:first');
+	//var liItemsList = $('#carousel ul li');
+	var liItemsList = carouselList.find('li');
+
+	var newfirstItem = liItemsList.get(dotIndex);
+	firstItem.before(newfirstItem);
+	carouselList.css({'margin-left': 0})
+}
+*/
 
 
 function getIndexOfLi (dotIndex) {
@@ -67,43 +79,29 @@ function getIndexOfLi (dotIndex) {
 var dot = $('#menu li');
 
 dot.click(function() {
+	clearInterval(myTimer);
   var index = dot.index( this );
   //var dotNr = dot.eq(index);
 fillDots(index);
 
-if (index>licznik){
-	
+
+console.log(licznik + ' = licznik');
+console.log(index + ' = index');
+
+if (licznik<index) {
 	for (i=licznik; i<index; i++){
-	changeSlide(300);
-	}
-
-}else {
-		
-		for (i=licznik; i>index; i--){
 		changeSlide(300);
-		}
-
 	}
-
-console.log()
-
-
-  
-});
-
-
-
-});
-
-/*
-function getIndexOfLi (dotIndex) {
-
-	var firstItem = carouselList.find('li:first');
-	//var liItemsList = $('#carousel ul li');
-	var liItemsList = carouselList.find('li');
-
-	var newfirstItem = liItemsList.get(dotIndex);
-	firstItem.before(newfirstItem);
-	carouselList.css({'margin-left': 0})
+} else if (licznik>index) {
+	for (i=licznik; i>index; i--){
+		moveSlidesBack(300);
+	}
 }
-*/
+myTimer = setInterval(changeSlide, 3000);
+  //getIndexOfLi(index);
+});
+
+
+
+});
+

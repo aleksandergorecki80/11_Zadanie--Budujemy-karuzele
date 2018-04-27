@@ -7,31 +7,62 @@ body {
     margin: 0;
 }
 
-#carousel {
-    width: 5500px;
-    height: 300px;
+.gallery {
+    width: 500px;
     margin: 0 auto;
-    //border: 5px solid green;
-    overflow: hidden;
-    padding: 0;
-    ul {
-        margin: 0;
-        padding: 0;
-        width: 2500px;
+    position: relative;
 
-       li {
-            width: 500px;
-            height: 300px;
-            list-style-type: none;
-            float: left;
+    #carousel {
+        width:  500px;
+        height: 300px;
+        margin: 0 auto;
+        //border: 5px solid green;
+        overflow: hidden;
+        padding: 0;
+        background-color: #000000;
+        ul {
             margin: 0;
             padding: 0;
-            display: inline-block;
-            img {
+            width: 2500px;
+
+           li {
                 width: 500px;
                 height: 300px;
-                
+                list-style-type: none;
+                float: left;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                img {
+                    width: 500px;
+                    height: 300px;                
+                }
             }
         }
     }
+
+    #menu {
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 300px;
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translateX(-50%);
+        li {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            border-radius: 50%;
+            padding: 5px 5px;
+            cursor: pointer;
+            background-color: none;
+        }
+    }
 }
+
+
+
+

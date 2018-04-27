@@ -6,21 +6,28 @@ body {
   margin: 0;
 }
 
-#carousel {
-  width: 5500px;
+.gallery {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery #carousel {
+  width: 500px;
   height: 300px;
   margin: 0 auto;
   overflow: hidden;
   padding: 0;
+  background-color: #000000;
 }
 
-#carousel ul {
+.gallery #carousel ul {
   margin: 0;
   padding: 0;
   width: 2500px;
 }
 
-#carousel ul li {
+.gallery #carousel ul li {
   width: 500px;
   height: 300px;
   list-style-type: none;
@@ -30,9 +37,31 @@ body {
   display: inline-block;
 }
 
-#carousel ul li img {
+.gallery #carousel ul li img {
   width: 500px;
   height: 300px;
+}
+
+.gallery #menu {
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+}
+
+.gallery #menu li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: 50%;
+  padding: 5px 5px;
+  cursor: pointer;
+  background-color: none;
 }
 
 /*# sourceMappingURL=style.css.map */
