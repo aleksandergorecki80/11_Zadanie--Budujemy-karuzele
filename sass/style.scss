@@ -76,9 +76,13 @@ body {
         top: 50%;
         transform: translateY(-50%);
         .control {
+            &:hover{
+                opacity: 1;
+            }
             font-size: 36px;
             color: white;
             opacity: 0.5;
+            cursor: pointer;
         }
     }
 }
