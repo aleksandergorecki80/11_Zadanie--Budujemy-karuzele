@@ -42,6 +42,10 @@ body {
     }
 
     #menu {
+        .active {
+            background-color: white;
+        }
+
         text-align: center;
         padding: 0;
         margin: 0 auto;
@@ -58,7 +62,7 @@ body {
             border-radius: 50%;
             padding: 5px 5px;
             cursor: pointer;
-            background-color: none;
+            border: 1px solid white;
         }
     }
 }
