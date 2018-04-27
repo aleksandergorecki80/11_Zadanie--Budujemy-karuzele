@@ -1,6 +1,8 @@
+@import 'grid';
+
 * {
 	box-sizing: border-box;
-//    border: 1px solid red;
+    //border: 1px solid red;
 }
 
 body {
@@ -63,6 +65,20 @@ body {
             padding: 5px 5px;
             cursor: pointer;
             border: 1px solid white;
+        }
+    }
+    .next-prev {
+        .row {
+            margin: 0;
+        }
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        .control {
+            font-size: 36px;
+            color: white;
+            opacity: 0.5;
         }
     }
 }
