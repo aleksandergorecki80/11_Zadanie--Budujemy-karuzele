@@ -6,7 +6,7 @@ $(function(){
 
 	var myTimer = setInterval(changeSlide, 3000);
 
-	console.log(carouselList + 'carouselList');
+
 
 	function changeSlide(speed){	
 		licznik ++;
@@ -19,7 +19,13 @@ $(function(){
 
 	function moveSlidesBack (speed){
 		carouselList.animate({'marginLeft': 500}, speed, moveLastSlide);
+		if (licznik==0){
+			licznik=5;
+		}
 		licznik--;	
+		
+		fillDots(licznik);
+		console.log(licznik + ' 	- licznik w funkcji moveSlidesBack')
 	}
 
 
@@ -77,6 +83,18 @@ $(function(){
 		}
 		myTimer = setInterval(changeSlide, 3000);
 	  
+	});
+
+	$('.fa-chevron-circle-left').click(function(){
+		clearInterval(myTimer);
+		moveSlidesBack(300);
+		myTimer = setInterval(changeSlide, 3000);
+	});
+
+	$('.fa-chevron-circle-right').click(function(){
+		clearInterval(myTimer);
+		changeSlide(300);	
+		myTimer = setInterval(changeSlide, 3000);	
 	});
 
 });

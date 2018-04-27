@@ -22,10 +22,15 @@ body {
         overflow: hidden;
         padding: 0;
         background-color: #000000;
+
+        //
+
         ul {
             margin: 0;
             padding: 0;
             width: 2500px;
+            position: relative;
+            left: -500px;
 
            li {
                 width: 500px;
