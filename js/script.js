@@ -7,10 +7,6 @@ $(function(){
 	var myTimer = setInterval(changeSlide, 3000);
 	var length = $('#menu li').length;
 
-	function carouselGoesLeft (){
-		var myTimer = setInterval(changeSlide, 3000);
-	};
-
 	function changeSlide(speed){	
 		licznik ++;
 		carouselList.animate({'marginLeft': -500}, speed, moveFirstSlide);
@@ -28,7 +24,6 @@ $(function(){
 		licznik--;	
 		fillDots(licznik);		//	change the active dot
 	};
-
 
 	function fillDots (nrSlajd){
 		$('#menu li').removeClass('active');
@@ -79,7 +74,6 @@ $(function(){
 		changeSlide(300);	
 		myTimer = setInterval(changeSlide, 3000);	
 	});
-
 
 });
 
