@@ -1,1 +1,1 @@
-https://aleksandergorecki80.github.io/11_Zadanie--Budujemy-karuzele/
+https://aleksandergorecki80.github.io/11_Sliding_carousel/
